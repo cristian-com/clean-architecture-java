@@ -1,7 +1,7 @@
 package com.cristian.accounts.infrastructure.web.api.members;
 
 import com.cristian.accounts.application.usecases.members.IMemberRegistrationUseCase;
-import com.cristian.accounts.common.http.HttpResponse;
+import com.cristian.accounts.infrastructure.web.HttpResponse;
 import lombok.RequiredArgsConstructor;
 
 import static com.cristian.accounts.infrastructure.web.api.members.WebRequest.CreateMemberRegistrationRequest;

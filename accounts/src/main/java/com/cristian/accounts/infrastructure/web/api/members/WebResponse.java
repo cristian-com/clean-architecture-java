@@ -1,7 +1,7 @@
 package com.cristian.accounts.infrastructure.web.api.members;
 
 import com.cristian.accounts.common.Adapter;
-import com.cristian.accounts.common.http.HttpResponse;
+import com.cristian.accounts.infrastructure.web.HttpResponse;
 import com.cristian.accounts.domain.members.MemberRegistration;
 
 class WebResponse {

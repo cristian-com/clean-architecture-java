@@ -1,8 +1,8 @@
 package com.cristian.accounts.application
 
-import com.cristian.accounts.application.gateways.AccountGateway
-import com.cristian.accounts.application.gateways.MemberGateway
-import com.cristian.accounts.application.gateways.MemberRegistrationGateway
+import com.cristian.accounts.application.gateways.AccountsGateway
+import com.cristian.accounts.application.gateways.MembersGateway
+import com.cristian.accounts.application.gateways.MemberRegistrationsGateway
 import com.cristian.accounts.application.gateways.OrganizationGateway
 import com.cristian.accounts.application.usecases.members.IMemberRegistrationUseCase
 import com.cristian.accounts.application.usecases.members.impl.MemberRegistrationUseCase
@@ -17,10 +17,10 @@ import static com.cristian.accounts.common.DummyObjectsFactory.*
 
 class MemberRegistrationSpec extends Specification {
 
-    MemberGateway memberGateway
-    AccountGateway accountGateway
+    MembersGateway memberGateway
+    AccountsGateway accountGateway
     OrganizationGateway organizationGateway
-    MemberRegistrationGateway memberRegistrationGateway
+    MemberRegistrationsGateway memberRegistrationGateway
     MemberRegistrationUseCase interactor
 
     Organization organization
@@ -66,7 +66,7 @@ class MemberRegistrationSpec extends Specification {
         given:
         accountGateway.find(account.id) >> Optional.of(account)
         organizationGateway.find(organization.id) >> Optional.of(organization)
-        memberGateway.findByAccountAndOrganization(account, organization) >> Optional.of(createMember())
+        memberGateway.exists(account, organization) >> Optional.of(createMember())
 
         when:
         interactor.register(command)
@@ -79,7 +79,7 @@ class MemberRegistrationSpec extends Specification {
         given:
         accountGateway.find(account.id) >> Optional.of(account)
         organizationGateway.find(organization.id) >> Optional.of(organization)
-        memberGateway.findByAccountAndOrganization(account, organization) >> Optional.empty()
+        memberGateway.exists(account, organization) >> Optional.empty()
 
         when:
         memberRegistrationGateway.save(*_) >> createMemberRegistration()

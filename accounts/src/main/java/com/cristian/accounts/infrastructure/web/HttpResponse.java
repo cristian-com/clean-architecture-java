@@ -1,4 +1,4 @@
-package com.cristian.accounts.common.http;
+package com.cristian.accounts.infrastructure.web;
 
 import lombok.Builder;
 

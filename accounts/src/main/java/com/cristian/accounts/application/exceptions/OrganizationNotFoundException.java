@@ -1,4 +1,4 @@
-package com.cristian.accounts.common.exceptions;
+package com.cristian.accounts.application.exceptions;
 
 public class OrganizationNotFoundException extends ResourceNotFoundException {
 }

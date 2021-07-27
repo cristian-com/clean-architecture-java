@@ -6,8 +6,8 @@ import com.cristian.accounts.domain.organizations.Organization;
 
 import java.util.Optional;
 
-public interface MemberGateway extends SimpleEntityGateway<Member> {
+public interface MembersGateway extends SimpleEntityGateway<Member> {
 
-    Optional<Member> findByAccountAndOrganization(Account account, Organization organization);
+    boolean exists(Account account, Organization organization);
 
 }

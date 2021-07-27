@@ -9,7 +9,7 @@ import java.util.Map;
 public class OrganizationInMemoryGateway extends SimpleInMemoryGateway<Organization>
         implements OrganizationGateway {
 
-    public OrganizationInMemoryGateway () {
+    public OrganizationInMemoryGateway() {
         super(Map.of(
                 UuidIdentifier.of("21b2486a-1ad4-4cfd-9414-d6a0bc05c759"),
                 Organization.builder()
